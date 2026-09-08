@@ -282,8 +282,8 @@
     <h4>Edit Skrip Dashboard</h4>
     <p class="desc">
       Satu objek berisi <code>site</code> (judul, subjudul portal) dan <code>links</code> (daftar menu/link).
-      Tiap item <code>links</code>: <code>{ name, url, icon, entries, percent }</code> — <code>icon</code> pakai emoji,
-      <code>entries</code> dan <code>percent</code> diisi manual sesuai kondisi terbaru. Tambah link baru = tambah satu objek baru di array <code>links</code>.
+      Tiap item <code>links</code>: <code>{ name, url, icon, entries }</code> — <code>icon</code> pakai emoji,
+      <code>entries</code> otomatis terisi dari data asli Apps Script (kalau sudah dipasang, lihat panduan terpisah) — kalau belum dipasang, angka ini bisa diisi manual sebagai nilai awal. Tambah link baru = tambah satu objek baru di array <code>links</code>.
     </p>
     <textarea id="config-input" spellcheck="false"></textarea>
     <div class="editor-actions">
@@ -310,14 +310,14 @@
       welcomeSubtitle: "Supply Chain Management Portal - Warehouse Digital Dashboard Version 2.0"
     },
     links: [
-      { name: "Form Charge Forklift & Reachtruck", icon: "🔌", url: "https://script.google.com/macros/s/AKfycbyS0bOMybTmLSSYOT6utgApQOqEmRsDCCX8t4AxO2xuWYPZ7K_Z5N49wGDM5xN5xqiM/exec", entries: 0, percent: 0 },
-      { name: "Dokumentasi Pengiriman Finish Good", icon: "📄", url: "https://script.google.com/macros/s/AKfycbzMEP5P2OqjEjJ756qADkKTAxxHJQfDcIprDFWIqRQ7KNBfeEOffu-vqNpJEpNicPBy0g/exec", entries: 0, percent: 0 },
-      { name: "Monitoring Plastik Wrapping", icon: "🎁", url: "https://script.google.com/macros/s/AKfycbzbGfDRcZcE_l-P6tz3Z9d9sdn0lqtiAvCee5En6JvcDR2Ov5jp0MWixGKF5GCb1BCc/exec", entries: 0, percent: 0 },
-      { name: "Monitoring Palet", icon: "📦", url: "https://script.google.com/macros/s/AKfycbygp4gqpPwDKPwCgzIX8O-wntn3g3knQOxc129sCZyYxuoQ5CARG9Iwh12nBP9xgF6v/exec", entries: 0, percent: 0 },
-      { name: "Warehouse Utilisasi", icon: "🏢", url: "https://script.google.com/macros/s/AKfycbwGUKgk1JbfbLMnFYwP-t_aF8_fNv0b-gu_OeiimB1RTPsynGINntHsEq8_kpXP_Bn1Ww/exec", entries: 0, percent: 0 },
-      { name: "Moving Part", icon: "🚚", url: "https://script.google.com/macros/s/AKfycbyBkFuGauSjUgA4DhDq_BrINj9pnXJ3f8SNCb6I6DDIlMMry9jW249TRjAaPI5DeTxW/exec", entries: 0, percent: 0 },
-      { name: "Checklist Forklift & Reachtruck", icon: "✅", url: "https://script.google.com/macros/s/AKfycbzIISPhBKB4q9Mvm-inc4sjN6wxZ6a6P4VeDKJ1u24-FrI-XCHdSlbdywx0GP03zbWdRg/exec", entries: 0, percent: 0 },
-      { name: "Rekapan DO Manual", icon: "🧾", url: "https://script.google.com/macros/s/AKfycbzZa9vGlC2DwcJ4gFXuP7t5Mx3f47o-R3XDWnwj5U7n06rRNG_yI8yOcbW8_HGb5l5z/exec", entries: 0, percent: 0 }
+      { name: "Form Charge Forklift & Reachtruck", icon: "🔌", url: "https://script.google.com/macros/s/AKfycbyS0bOMybTmLSSYOT6utgApQOqEmRsDCCX8t4AxO2xuWYPZ7K_Z5N49wGDM5xN5xqiM/exec", entries: 0 },
+      { name: "Dokumentasi Pengiriman Finish Good", icon: "📄", url: "https://script.google.com/macros/s/AKfycbzMEP5P2OqjEjJ756qADkKTAxxHJQfDcIprDFWIqRQ7KNBfeEOffu-vqNpJEpNicPBy0g/exec", entries: 0 },
+      { name: "Monitoring Plastik Wrapping", icon: "🎁", url: "https://script.google.com/macros/s/AKfycbzbGfDRcZcE_l-P6tz3Z9d9sdn0lqtiAvCee5En6JvcDR2Ov5jp0MWixGKF5GCb1BCc/exec", entries: 0 },
+      { name: "Monitoring Palet", icon: "📦", url: "https://script.google.com/macros/s/AKfycbygp4gqpPwDKPwCgzIX8O-wntn3g3knQOxc129sCZyYxuoQ5CARG9Iwh12nBP9xgF6v/exec", entries: 0 },
+      { name: "Warehouse Utilisasi", icon: "🏢", url: "https://script.google.com/macros/s/AKfycbwGUKgk1JbfbLMnFYwP-t_aF8_fNv0b-gu_OeiimB1RTPsynGINntHsEq8_kpXP_Bn1Ww/exec", entries: 0 },
+      { name: "Moving Part", icon: "🚚", url: "https://script.google.com/macros/s/AKfycbyBkFuGauSjUgA4DhDq_BrINj9pnXJ3f8SNCb6I6DDIlMMry9jW249TRjAaPI5DeTxW/exec", entries: 0 },
+      { name: "Checklist Forklift & Reachtruck", icon: "✅", url: "https://script.google.com/macros/s/AKfycbzIISPhBKB4q9Mvm-inc4sjN6wxZ6a6P4VeDKJ1u24-FrI-XCHdSlbdywx0GP03zbWdRg/exec", entries: 0 },
+      { name: "Rekapan DO Manual", icon: "🧾", url: "https://script.google.com/macros/s/AKfycbzZa9vGlC2DwcJ4gFXuP7t5Mx3f47o-R3XDWnwj5U7n06rRNG_yI8yOcbW8_HGb5l5z/exec", entries: 0 }
     ]
   };
   // ==========================================
@@ -373,10 +373,8 @@
           <div class="stat-badge">${item.icon || '🔗'}</div>
           <div class="stat-title">${escapeHtml(item.name)}</div>
         </div>
-        <div class="stat-num">${item.entries ?? 0}</div>
+        <div class="stat-num" id="stat-num-${i}">${item.entries ?? 0}</div>
         <div class="stat-label">Total Entries</div>
-        <div class="stat-bar-track"><div class="stat-bar-fill" style="width:${Math.min(100, item.percent || 0)}%"></div></div>
-        <div class="stat-percent">${item.percent ?? 0}%</div>
       </div>
     `).join('');
 
@@ -392,6 +390,28 @@
       const go = () => { currentView = parseInt(card.dataset.index, 10); renderAll(); };
       card.addEventListener('click', go);
       card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+    });
+
+    fetchAllStats();
+  }
+
+  async function fetchAllStats(){
+    DATA.links.forEach(async (item, i) => {
+      if (item.autoEntries === false) return;
+      try {
+        const sep = item.url.includes('?') ? '&' : '?';
+        const res = await fetch(item.url + sep + 'stats=1');
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        if (typeof data.entries === 'number') {
+          item.entries = data.entries;
+          const numEl = document.getElementById('stat-num-' + i);
+          if (numEl) numEl.textContent = item.entries;
+        }
+      } catch (err) {
+        console.warn('Gagal ambil data live untuk "' + item.name + '":', err.message);
+        // biarkan nilai manual yang tersimpan di skrip tetap tampil
+      }
     });
   }
 
@@ -415,7 +435,7 @@
   function serializeData(data){
     const siteLines = Object.entries(data.site).map(([k, v]) => `    ${k}: ${JSON.stringify(v)}`).join(',\n');
     const linkLines = data.links.map(item => {
-      const parts = [`      name: ${JSON.stringify(item.name)}`, `      icon: ${JSON.stringify(item.icon || '')}`, `      url: ${JSON.stringify(item.url)}`, `      entries: ${item.entries ?? 0}`, `      percent: ${item.percent ?? 0}`];
+      const parts = [`      name: ${JSON.stringify(item.name)}`, `      icon: ${JSON.stringify(item.icon || '')}`, `      url: ${JSON.stringify(item.url)}`, `      entries: ${item.entries ?? 0}`];
       return "    {\n" + parts.join(",\n") + "\n    }";
     }).join(",\n");
     return `{\n  site: {\n${siteLines}\n  },\n  links: [\n${linkLines}\n  ]\n}`;

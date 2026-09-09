@@ -144,6 +144,9 @@
   .topbar-text .l3{ color:var(--muted-2); font-size:0.66rem; margin-top:2px; }
 
   main{ flex:1; padding:16px 24px 24px; overflow:auto; }
+  .content.fullscreen-view .topbar{ display:none; }
+  .content.fullscreen-view main{ padding:0; }
+  .content.fullscreen-view .iframe-wrap{ height:100vh; border:0; border-radius:0; }
 
   /* ---------- HOME / HERO ---------- */
   .hero{
@@ -264,7 +267,7 @@
     </div>
   </aside>
 
-  <div class="content">
+  <div class="content" id="content-area">
     <div class="topbar">
       <div class="topbar-title" id="tb-title">Dashboard Warehouse</div>
       <div class="topbar-text">
@@ -428,8 +431,14 @@
   function renderAll(){
     applySiteMeta();
     renderNav();
-    if (currentView === 'home') renderHome();
-    else renderDetail(currentView);
+    const contentArea = document.getElementById('content-area');
+    if (currentView === 'home') {
+      contentArea.classList.remove('fullscreen-view');
+      renderHome();
+    } else {
+      contentArea.classList.add('fullscreen-view');
+      renderDetail(currentView);
+    }
   }
 
   function serializeData(data){
